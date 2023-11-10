@@ -6,14 +6,10 @@
     @auth
         <p style="position: absolute; right:1em; top:0em">Usuario: {{ auth()->user()->name }}</p>
     
-        <form action="{{ route('logout') }}" method="post">
+        <form action="{{ route('logout') }}" method="get">
             @csrf
             <button type="submit" style="position: absolute; right:1em; top:3em">Cerrar Sesión</button>
         </form>
     
     @endauth
 </header>
-
-<br>
-<br>
-<br>

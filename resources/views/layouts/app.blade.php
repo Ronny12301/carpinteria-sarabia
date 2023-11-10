@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title') - Carpintería Sarabia</title>
+    @vite('resources/css/app.css')
     @yield('head')
 </head>
 <body>
     @include('layouts.header')
     @yield('content')
 
-    <br>
     @include('layouts.footer')
 
     @yield('scripts')

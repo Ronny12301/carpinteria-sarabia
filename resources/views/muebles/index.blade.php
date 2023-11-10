@@ -3,6 +3,7 @@
 @section('title', 'Muebles')
 
 @section('content')
+<br>
     ola mostrar muebles
     @auth
         <h1>Administrar Muebles</h1>

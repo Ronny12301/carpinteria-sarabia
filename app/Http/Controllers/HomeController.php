@@ -13,7 +13,7 @@ class HomeController extends Controller
 
         $options = [
             [
-                "name" => "Muebles",
+                "name" => "Cátalogo de Muebles",
                 "link" => route("muebles.index"),
             ],
             [
