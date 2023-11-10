@@ -23,6 +23,11 @@
         <p><strong>Tipo:</strong> {{ $mueble->tipo }}</p>
         <p><strong>Precio:</strong> {{ $mueble->precio }}</p>
         <img src="{{ $mueble->imagen ?? img('null.webp') }}" alt="{{ $mueble->nombre }}" style="height: 200px">
+       @auth
+            <a href="">editar</a>
+            <a href="">eliminar</a>
+       @endauth
+        
     </article>
     <br>
     @endforeach

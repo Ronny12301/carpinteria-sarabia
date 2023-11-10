@@ -3,6 +3,7 @@
 @section('title', 'Contacto')
 
 @section('content')
+<br>
     <h1>Contacto</h1>
 
     <p>Responsable</p>
