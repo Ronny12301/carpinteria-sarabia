@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .btn-sarabia {
+        @apply bg-cafe-sarabia border-transparent rounded-full text-white border-8 m-10;
+    }
+
+    .text-box-sarabia {
+        @apply bg-gray-200 appearance-none border-2 border-gray-200 rounded-full w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-cafe-sarabia
+    }
+}
