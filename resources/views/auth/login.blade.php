@@ -19,7 +19,7 @@
 
             <div class="flex flex-col space-y-4 text-center p-6">
                 <label for="name">Usuario</label>
-                <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded-full w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-cafe-sarabia" 
+                <input class="text-box-sarabia" 
                     type="name" name="name" id="name" placeholder="Usuario"
                 >
                 @error('name')
@@ -27,15 +27,14 @@
                 @enderror
     
                 <label for="password">Contraseña</label>
-                <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded-full w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-cafe-sarabia" 
+                <input class="text-box-sarabia" 
                     type="password" name="password" id="password" placeholder="Contraseña"
                 >
                 @error('password')
                     <small>{{ $message }}</small>
                 @enderror
-                <button class="bg-cafe-sarabia border-transparent rounded-full text-white border-8 m-10" 
-                type="submit"
-                >
+                <button class="btn-sarabia" 
+                type="submit">
                     Iniciar sesión
                 </button>
             </div>
