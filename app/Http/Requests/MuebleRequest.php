@@ -27,7 +27,7 @@ class MuebleRequest extends FormRequest
             'tipo' => 'required|max:100',
             'cantidad' => 'required|numeric|min:0|max:2147483646',
             'precio' => 'required|numeric|min:0|max:999999',
-            'imagen' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'imagen' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ];
     }
 }

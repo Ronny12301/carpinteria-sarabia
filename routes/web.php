@@ -3,7 +3,6 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MuebleController;
-use App\Http\Controllers\VentaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,4 +31,3 @@ Route::get('contacto', fn() => view('contacto'))->name('contacto');
 
 // Controllers
 Route::resource('muebles', MuebleController::class);
-Route::resource('ventas', VentaController::class)->middleware('auth');

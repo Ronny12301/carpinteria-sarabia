@@ -24,11 +24,16 @@
         <p><strong>Precio:</strong> {{ $mueble->precio }}</p>
         <img src="{{ $mueble->imagen ?? img('null.webp') }}" alt="{{ $mueble->nombre }}" style="height: 200px">
        @auth
-            <a href="">editar</a>
-            <a href="">eliminar</a>
+            <a href="{{ route('muebles.edit', $mueble) }}">Editar</a>
+            <form action="{{ route('muebles.destroy', $mueble) }}" method="post">
+                @csrf
+                @method('delete')
+                <button type="submit">Eliminar</button>            
+            </form>
        @endauth
         
     </article>
     <br>
     @endforeach
+    <br>
 @endsection

@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <h1>Agregar Mueble</h1> 
+    <h1>Modificar {{ $mueble->nombre }}</h1> 
     <p>
         <a href="{{ route('muebles.index') }}">Regresar</a>
     </p>

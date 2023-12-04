@@ -31,10 +31,6 @@ class HomeController extends Controller
                     "link" => route("muebles.index"),
                 ],
                 [
-                    "name" => "Control de Ventas",
-                    "link" => route("ventas.index"),
-                ],
-                [
                     "name" => "Datos de contacto",
                     "link" => route("contacto"),
                 ],
