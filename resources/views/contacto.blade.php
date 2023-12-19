@@ -5,9 +5,8 @@
 @section('content')
 
     <body class="font-principal">
-    <br>
     <div class="bg-cafe-sarabia text-center text-4xl text-white p-9">
-        <h1>Datos de contacto.</h1>
+        <h1>Datos de contacto</h1>
     </div>
     <div class="flex justify-end space-x-10 m-10">
         <div class="text-4xl">

@@ -17,7 +17,9 @@ export default {
 
       backgroundImage: {
         'fondo-principal': "url('/public/img/fondo-principal.jpg')",
-        'fondo-login': "url('/public/img/fondo-login.jpg')"
+        'fondo-login': "url('/public/img/fondo-login.jpg')",
+        'fondo-registrar-usuario': "url('/public/img/fondo-registro-usuario.jpg')",
+        'fondo-registro-mueble': "url('/public/img/fondo-registro-mueble.jpg')"
       }
     },
   },
