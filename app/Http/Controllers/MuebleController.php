@@ -35,9 +35,9 @@ class MuebleController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function edit() 
+    public function edit(Mueble $mueble) 
     {
-        return view('muebles.edit');
+        return view('muebles.edit')->with('mueble',$mueble);
     }
 
     /**
@@ -85,6 +85,16 @@ class MuebleController extends Controller
         $request->validated();
 
         $mueble->update($request->all());
+
+        return redirect()->route('muebles.index');
+    }
+
+    public function destroy(Mueble $mueble) 
+    {
+        if ($mueble->imagen) {
+            unlink(public_path($mueble->imagen));
+        }
+        $mueble->delete();
 
         return redirect()->route('muebles.index');
     }
