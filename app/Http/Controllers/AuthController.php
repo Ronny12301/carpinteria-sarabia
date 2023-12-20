@@ -72,4 +72,14 @@ class AuthController extends Controller
 
         return redirect()->route('home');
     }
+
+    public function resetPassword()
+    {
+        return view('auth.reset-password');
+    }
+
+    public function forgotPassword()
+    {
+        return view('auth.forgot-password');
+    }
 }

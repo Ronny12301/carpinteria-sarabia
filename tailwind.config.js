@@ -13,6 +13,7 @@ export default {
 
       colors: {
         'cafe-sarabia': '#a63814',
+        'cafe-sarabia-hover': '#872E10',
       },
 
       backgroundImage: {

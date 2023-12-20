@@ -47,7 +47,7 @@ class MuebleController extends Controller
      */
     public function show() 
     {
-        return view('muebles.show');
+        // return view('muebles.show');
     }
 
     /**
