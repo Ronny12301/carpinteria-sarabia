@@ -5,12 +5,14 @@
 @section('content')
 @include('layouts.header', ['title' => 'Nueva Contraseña'])
 
-    <form action="{{ route() }}">
+    <form action="/XD">
         <label for="password">Nueva contraseña</label>
-        <input type="password" name="password">
+        <input class="border" type="password" name="password">
 
         <label for="confirm-password">Confirmar contraseña</label>
-        <input type="password" name="confirm-password">
+        <input class="border" type="password" name="confirm-password">
+
+        <button type="submit">Guardar Contraseña</button>
     </form>
 
 @endsection

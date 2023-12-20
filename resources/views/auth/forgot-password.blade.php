@@ -5,7 +5,9 @@
 @section('content')
 @include('layouts.header', ['title' => 'Recuperar Contraseña'])
 
-<form action="{{ route('') }}" method="post"></form>
+{{-- para ver la de restaurar la contraseña vete a /reset-password --}}
+
+<form action="{{ route('reset-password') }}" method="get"></form>
 
     <label for="name">Ingrese su correo o nombre de usuario</label>
     <input name="name" type="text">
