@@ -9,11 +9,13 @@
     @yield('head')
 </head>
 <body>
-    @include('layouts.header')
+
     @yield('content')
 
-    @include('layouts.footer')
-
+    @unless(\Request::routeIs('home'))
+        @include('layouts.footer')
+    @endunless
+    
     @yield('scripts')
 </body>
 </html>

@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "principal": ['"Inter"', 'sans-serif']
+        "principal": ['Ubuntu','"Inter"', 'sans-serif']
       },
 
       colors: {

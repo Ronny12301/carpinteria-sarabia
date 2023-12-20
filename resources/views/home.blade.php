@@ -4,7 +4,9 @@
 
 @section('content')
 
-  <body class="bg-fondo-principal bg-cover bg-no-repeat bg-fixed font-sans text-white">
+  <body class="bg-fondo-principal bg-cover bg-no-repeat bg-fixed font-principal text-white">
+    @include('layouts.header', ['title' => ''])
+
     <div class="flex flex-col items-center justify-center h-screen">
       <div>
         <h1 class="text-6xl">CARPINTERIA SARABIA</h1>

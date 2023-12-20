@@ -10,10 +10,10 @@
       <a href="{{ route('muebles.index') }}">Regresar</a>
     </p>
 
-    <form action="{{ route('muebles.store') }}" method="post">
+    <form action="{{ route('muebles.update') }}" method="post">
       @csrf
 
-      <label for="nombre">Nombre</label> <br>
+      <label for="nombre" class="ml-2">Nombre</label> <br>
       <input type="text" name="nombre" id="nombre" placeholder="Nombre del mueble" value="{{ old('nombre') }}">
       @error('nombre')
         <small>{{ $message }}</small>
