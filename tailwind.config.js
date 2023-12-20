@@ -8,16 +8,19 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "principal": ['"Inter"', 'sans-serif']
+        "principal": ['Ubuntu','"Inter"', 'sans-serif']
       },
 
       colors: {
         'cafe-sarabia': '#a63814',
+        'cafe-sarabia-hover': '#872E10',
       },
 
       backgroundImage: {
         'fondo-principal': "url('/public/img/fondo-principal.jpg')",
-        'fondo-login': "url('/public/img/fondo-login.jpg')"
+        'fondo-login': "url('/public/img/fondo-login.jpg')",
+        'fondo-registrar-usuario': "url('/public/img/fondo-registro-usuario.jpg')",
+        'fondo-registro-mueble': "url('/public/img/fondo-registro-mueble.jpg')"
       }
     },
   },
