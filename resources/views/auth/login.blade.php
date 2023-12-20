@@ -33,6 +33,9 @@
                 @error('password')
                     <small class="text-red-700 -mt-3 ml-4">{{ $message }}</small>
                 @enderror
+
+                <a href="{{ route('forgot-password') }}">¿Olvidó su contraseña?</a>
+
                 <button class="btn-sarabia" 
                 type="submit">
                     Iniciar sesión

@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\MuebleController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MuebleController;
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,8 @@ Route::post('register', [AuthController::class, 'create'])->name('register');
 Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('login', [AuthController::class, 'attemptLogin'])->name('signin');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
+Route::get('reset-password', [AuthController::class, 'resetPassword'])->name('reset-password');
+Route::get('forgot-password', [AuthController::class, 'forgotPassword'])->name('forgot-password');
 
 Route::get('contacto', fn() => view('contacto'))->name('contacto');
 
