@@ -20,7 +20,9 @@ export default {
         'fondo-principal': "url('/public/img/fondo-principal.jpg')",
         'fondo-login': "url('/public/img/fondo-login.jpg')",
         'fondo-registrar-usuario': "url('/public/img/fondo-registro-usuario.jpg')",
-        'fondo-registro-mueble': "url('/public/img/fondo-registro-mueble.jpg')"
+        'fondo-registro-mueble': "url('/public/img/fondo-registro-mueble.jpg')",
+        'fondo-forget': "url('/public/img/fondo-forget.jpg')",
+        'fondo-reset': "url('/public/img/fondo-reset.jpg')"
       }
     },
   },
