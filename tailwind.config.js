@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "principal": ['Ubuntu','"Inter"', 'sans-serif']
+        "principal": ['Cormorant Garamond', '"Inter"', 'sans-serif']
       },
 
       colors: {
@@ -20,7 +20,19 @@ export default {
         'fondo-principal': "url('/public/img/fondo-principal.jpg')",
         'fondo-login': "url('/public/img/fondo-login.jpg')",
         'fondo-registrar-usuario': "url('/public/img/fondo-registro-usuario.jpg')",
-        'fondo-registro-mueble': "url('/public/img/fondo-registro-mueble.jpg')"
+        'fondo-registro-mueble': "url('/public/img/fondo-registro-mueble.jpg')",
+        'fondo-forget': "url('/public/img/fondo-forget.jpg')",
+        'fondo-reset': "url('/public/img/fondo-reset.jpg')"
+      },
+
+      animation: {
+        bounce: 'bounce 1s infinite'
+      },
+      keyframes: {
+        bounce: {
+          '0%, 100%': { transform: 'translateY(-25%)', animationTimingFunction: 'cubic-bezier(0.8,0,1,1)' },
+          '50%': { transform: 'none', animationTimingFunction: 'cubic-bezier(0,0,0.2,1)' }
+        }
       }
     },
   },
