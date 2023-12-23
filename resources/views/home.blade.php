@@ -29,7 +29,7 @@
       </div>
 
       @guest
-        <a href="{{ route('login') }}" class="text-xl space-y-8 drop-shadow-lg">
+        <a href="{{ route('login') }}" class="btn-sarabia px-5 text-xl space-y-8 drop-shadow-lg hover:animate-bounce ">
           <h1>Iniciar sesión</h1>
         </a>
       @endguest
