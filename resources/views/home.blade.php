@@ -12,14 +12,13 @@
         <h1 class="text-4xl sm:text-7xl text-center font-titulos">CARPINTERIA SARABIA</h1>
       </div>
       <div>
-        <h2 class="text-2xl sm:text-3xl font-titulos mb-10">"La calidad se mide en el hogar"</h2><br>
+        <h2 class="text-2xl sm:text-3xl font-titulos">"La calidad se mide en el hogar"</h2><br>
       </div>
 
       @auth
       <h1>Administración</h1>
       <p>Bienvenido {{ auth()->user()->name }}</p>
-        <p>¿Qué desea hacer?</p>
-        <br>
+        <p class="pb-12">¿Qué desea hacer?</p>
       @endauth
 
       
