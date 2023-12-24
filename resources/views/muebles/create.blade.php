@@ -6,9 +6,9 @@
   <body class="font-principal">
     <div class="flex">
 
-      <div class="h-screen fixed w-3/5 bg-cover bg-no-repeat bg-left bg-fondo-registro-mueble"> </div>
+      <div class="h-screen fixed sm:w-3/5 bg-cover bg-no-repeat bg-left bg-fondo-registro-mueble"> </div>
 
-      <div class="w-2/5 ml-auto">
+      <div class="w-screen sm:w-2/5 ml-auto">
         <div class="bg-cafe-sarabia text-white text-center flex flex-col">
           <h1 class="pt-6 pb-4 text-3xl">Registrar mueble.</h1>
           <h2 class="pb-4">Ingrese los datos para registrar el mueble.</h2>

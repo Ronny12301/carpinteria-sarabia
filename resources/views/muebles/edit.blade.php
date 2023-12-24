@@ -8,12 +8,12 @@
     <div class="flex">
 
       <div
-        class="h-screen fixed w-3/5 bg-cover bg-no-repeat bg-left bg-fondo-registro-mueble backdrop-opacity-100 hover:backdrop-opacity-50 transition-all duration-1000">
-        <img src="{{ $mueble->imagen ?? img('null.webp') }}" alt="Imagen del mueble"
+        class="h-screen fixed sm:w-3/5 bg-cover bg-no-repeat bg-left bg-fondo-registro-mueble backdrop-opacity-100 hover:backdrop-opacity-50 transition-all duration-1000">
+        <img src="{{ $mueble->imagen ? asset($mueble->imagen) : img('null.webp') }}" alt="Imagen del mueble"
           class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2 h-auto rounded-lg">
       </div>
 
-      <div class="w-2/5 ml-auto">
+      <div class="w-screen sm:w-2/5 ml-auto">
         <div class="bg-cafe-sarabia text-white text-center flex flex-col">
           <h1 class="pt-6 pb-4 text-3xl">Modificar mueble.</h1>
           <h2 class="pb-4">Ingrese los datos para modificar el mueble.</h2>

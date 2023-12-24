@@ -11,9 +11,9 @@
 
     <div class="flex">
 
-      <div class="w-3/5 fixed h-screen bg-cover bg-no-repeat bg-left bg-fondo-forget"> </div>
+      <div class="sm:w-3/5 fixed h-screen bg-cover bg-no-repeat bg-left bg-fondo-forget"> </div>
 
-      <div class="w-2/5 ml-auto">
+      <div class="w-screen sm:w-2/5 ml-auto">
         <div class="bg-cafe-sarabia text-white text-center flex flex-col">
           <h1 class="pt-8 pb-10 text-3xl m-4">Ingrese su correo o nombre de usuario</h1>
 

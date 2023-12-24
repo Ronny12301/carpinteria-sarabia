@@ -9,30 +9,28 @@
 
     <div class="flex flex-col items-center justify-center h-screen">
       <div>
-        <h1 class="text-6xl">CARPINTERIA SARABIA</h1>
+        <h1 class="text-4xl sm:text-7xl text-center font-titulos">CARPINTERIA SARABIA</h1>
       </div>
       <div>
-        <h2 class="text-3xl">"La calidad se mide en el hogar"</h2><br>
+        <h2 class="text-2xl sm:text-3xl font-titulos mb-10">"La calidad se mide en el hogar"</h2><br>
       </div>
 
       @auth
-        <h1>Administración</h1>
-        <p>Bienvenido {{ auth()->user()->name }}</p>
+      <h1>Administración</h1>
+      <p>Bienvenido {{ auth()->user()->name }}</p>
         <p>¿Qué desea hacer?</p>
         <br>
       @endauth
 
-      <div class="text-xl space-y-8 shadow">
-        @foreach ($options as $option)
-          <a class="px-5 drop-shadow-lg" href="{{ $option['link'] }}">{{ $option['name'] }}</a>
-        @endforeach
-      </div>
-
-      @guest
-        <a href="{{ route('login') }}" class="btn-sarabia px-5 text-xl space-y-8 drop-shadow-lg hover:animate-bounce ">
-          <h1>Iniciar sesión</h1>
+      
+      @foreach ($options as $option)
+        <a class="btn-sarabia my-2 hover:animate-bounce hover:bg-cafe-sarabia-hover 
+          text-[15px] sm:text-xl px-5 sm:px-10 shadow-black drop-shadow-lg" 
+          href="{{ $option['link'] }}"
+        >
+          {{ $option['name'] }}
         </a>
-      @endguest
+      @endforeach
 
     </div>
   </body>

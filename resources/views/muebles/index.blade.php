@@ -15,7 +15,9 @@
     @auth
     @include('layouts.header', ['title' => 'Administrar Muebles'])
 
-      <a class="btn-sarabia p-3 fixed bottom-5 right-3 fill-white hover:bg-cafe-sarabia-hover" href="{{ route('muebles.create') }}">
+      <a class="btn-sarabia shadow-md shadow-black p-1 sm:p-3 fixed bottom-5 -right-3 sm:right-3 fill-white hover:bg-cafe-sarabia-hover z-50" 
+        href="{{ route('muebles.create') }}"
+      >
         <svg class="fill-inherit" xmlns="http://www.w3.org/2000/svg" height="50" width="50" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
       </a>
 
@@ -23,10 +25,10 @@
       @include('layouts.header', ['title' => 'Cátalogo de Muebles'])
     @endauth
 
-    <input x-model="search" type="search" placeholder="Buscar muebles" class="px-3 py-2 absolute right-10 border rounded-lg">
-    <br> <br> <br>
+    <input x-model="search" type="search" placeholder="Buscar muebles" class="px-3 py-2 absolute right-10 top-[83px] border rounded-lg">
+    <br> <br>
 
-    <div class="grid grid-cols-3 gap-10 mb-0 mx-auto max-w-screen-lg">
+    <div class="px-12 sm:px-32 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mb-0 max-w-screen-lg">
       @foreach ($muebles as $mueble)
         <article x-show="searchMueble($el)" class="bg-slate-50 border-2 border-slate-300 shadow-gray-300 shadow-lg rounded-md ">
           <div class="bg-cafe-sarabia py-4 text-white text-xl rounded-t-md text-center border-b-2 border-slate-300">

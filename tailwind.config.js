@@ -8,7 +8,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "principal": ['Cormorant Garamond', '"Inter"', 'sans-serif']
+        "principal": ['Ubuntu', '"Inter"', 'sans-serif'],
+        "titulos": ['Cormorant Garamond', '"Inter"', 'sans-serif']
       },
 
       colors: {
@@ -30,10 +31,17 @@ export default {
       },
       keyframes: {
         bounce: {
-          '0%, 100%': { transform: 'translateY(-25%)', animationTimingFunction: 'cubic-bezier(0.8,0,1,1)' },
-          '50%': { transform: 'none', animationTimingFunction: 'cubic-bezier(0,0,0.2,1)' }
+          '0%, 100%': { transform: 'translateY(-8%)', animationTimingFunction: 'cubic-bezier(0.5,0,0.7,0.7)' },
+          '50%': { transform: 'none', animationTimingFunction: 'cubic-bezier(0,0,0.2,0.7)' }
         }
-      }
+      },
+
+      screens: {
+        'sm': '820px',
+        'md': '1050px',
+        'lg': '2000px',
+        // => @media (min-width: 1440px) { ... }
+      },
     },
   },
   plugins: [],

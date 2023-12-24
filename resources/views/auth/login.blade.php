@@ -6,12 +6,12 @@
 <body class="font-principal">
 <div class="flex">
 
-    <div class="w-3/5 fixed h-screen bg-cover bg-no-repeat bg-left bg-fondo-login"> </div>
+<div class="sm:w-3/5 fixed h-screen bg-cover bg-no-repeat bg-left bg-fondo-login"> </div>
 
-    <div class="w-2/5 ml-auto">
+    <div class="w-screen sm:w-2/5 ml-auto">
         <div class="bg-cafe-sarabia text-white text-center flex flex-col">
-          <h1 class="pt-8 pb-10 text-3xl">Inicio de sesión de empleados</h1>
-          <h2 class="pb-6">Este servicio esta reservado unicamente a los empleados activos de la carpinteria sarabia</h2>
+          <h1 class="pt-8 pb-10 text-3xl mx-2">Inicio de sesión de empleados</h1>
+          <h2 class="pb-6 mx-9">Este servicio esta reservado unicamente a los empleados activos de la carpinteria sarabia</h2>
         </div>    
 
         <form action="{{ route('signin') }}" method="post">
@@ -36,7 +36,7 @@
 
                 <a href="{{ route('forgot-password') }}">¿Olvidó su contraseña?</a>
 
-                <button class="btn-sarabia" 
+                <button class="btn-sarabia hover:bg-cafe-sarabia-hover" 
                 type="submit">
                     Iniciar sesión
                 </button>
