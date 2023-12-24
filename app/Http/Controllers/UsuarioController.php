@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
@@ -11,7 +12,8 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        return view("usuarios.index");
+        $usuarios = User::all();
+        return view("usuarios.index")->with("usuarios", $usuarios);
     }
 
     /**
@@ -20,14 +22,6 @@ class UsuarioController extends Controller
     public function create()
     {
         return view("usuarios.create");
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
@@ -41,24 +35,37 @@ class UsuarioController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(User $usuario)
     {
-        //
+        return view("usuarios.edit")->with("usuario", $usuario);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, User $usuario)
     {
-        //
+        $request->validate([
+            "name" => ['required', 'max:100', \Illuminate\Validation\Rule::unique('users')->ignore($usuario->user_id, 'user_id'),],
+        ]);
+
+        if (auth()->user()->user_id === $usuario->user_id ) {
+            $request->validate([
+                "email" => ['required', 'max:255', \Illuminate\Validation\Rule::unique('users')->ignore($usuario->user_id, 'user_id'),],
+            ]);
+        }
+        
+        $usuario->update($request->all());
+        return redirect()->route("usuarios.index")->with("success", "Usuario actualizado.");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(User $usuario)
     {
-        //
+        $usuario->delete();
+
+        return redirect()->route("usuarios.index")->with("success", "Usuario eliminado.");
     }
 }

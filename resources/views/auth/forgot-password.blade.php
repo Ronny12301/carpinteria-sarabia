@@ -19,14 +19,21 @@
 
         </div>
 
-        <div class="flex flex-col ml-6 mr-6 -mb-8 mt-6">
+          <form action="{{ route('send-mail') }}" method="post">
+            @csrf
 
-          <form action="{{ route('reset-password') }}" method="get"></form>
+            <div class="flex flex-col ml-6 mr-6 -mb-8 mt-6">
 
-          <input placeholder="Correo o nombre de usuario" class="text-box-sarabia mt-5" name="name" type="text">
+              <input placeholder="Correo o nombre de usuario" class="text-box-sarabia mt-5" id="mail" name="mail" type="text">
+              @error('mail')
+                <small class="text-red-700 ml-4">El campo correo es obligatorio</small>
+              @enderror
 
-          <button class="btn-sarabia">Enviar</button>
-        </div>
+              <button type="submit" class="btn-sarabia">Enviar</button>
+            </div>
+
+          </form>
+
 
       </div>
     </div>

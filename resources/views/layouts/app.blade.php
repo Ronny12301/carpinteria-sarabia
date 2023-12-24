@@ -11,7 +11,6 @@
     @yield('head')
 </head>
 <body>
-
     @yield('content')
 
     @unless(\Request::routeIs('home'))

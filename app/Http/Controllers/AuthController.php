@@ -31,7 +31,7 @@ class AuthController extends Controller
         
         if (auth()->attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect(route('home'))->with('success','Sesión iniciada.');
+            return redirect(route('home'));
         }
 
         throw ValidationException::withMessages([
@@ -48,7 +48,10 @@ class AuthController extends Controller
 
     public function register()
     {
-        if (User::count() > 0) {
+        if (auth()->check()) {
+            return redirect()->route('usuarios.create');
+        }
+        else if (User::count() > 0) {
             return redirect()->route('login');
         }
         return view('auth.register');
@@ -68,8 +71,11 @@ class AuthController extends Controller
 
         $user = User::create($credentials);
 
-        auth()->login($user);
+        if (auth()->check()) {
+            return redirect()->route('usuarios.index')->with('success', 'Usuario creado.');
+        }
 
+        auth()->login($user);
         return redirect()->route('home');
     }
 
@@ -78,8 +84,55 @@ class AuthController extends Controller
         return view('auth.reset-password');
     }
 
+    public function updatePassword(Request $request, User $usuario) 
+    {
+        $credentials = $request->validate([
+            'password' => 'required',
+            'confirm-password' => 'required'
+        ]);
+
+        if ($credentials['password'] !== $credentials['confirm-password']) {
+            throw ValidationException::withMessages([
+                'password' => 'Las contraseñas no coinciden.'
+            ]);
+        }
+
+        $credentials['password'] = bcrypt($credentials['password']);
+
+        $usuario->update($credentials);
+
+        return redirect()->route('login')->with('success', 'Contraseña actualizada.');
+    }
+
     public function forgotPassword()
     {
         return view('auth.forgot-password');
+    }
+
+    public function sendMail(Request $request) 
+    {
+        $request->validate([
+            'mail' => 'required'
+        ]);
+
+        $usuario = User::where(function ($query) use ($request) {
+            $query->where('email', '=', $request->mail)
+                ->orWhere('name', '=', $request->mail);
+        })->first();
+
+        if ($usuario) {
+            $email = new \SendGrid\Mail\Mail();
+            $email->setFrom("zs18015382@estudiantes.uv.mx", "Carpintería Sarabia");
+            $email->setSubject('Solicitud para restaurar contraseña');
+            $email->addContent(
+                "text/html", view('emails.reset-password-mail')->with('usuario', $usuario)->render()
+            );
+            $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
+    
+            $email->addTo($usuario->email);
+            $sendgrid->send($email);   
+        }
+
+        return redirect()->route('forgot-password')->with('success', 'Se ha enviado un correo a la dirección proporcionada.');
     }
 }

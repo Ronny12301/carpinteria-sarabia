@@ -28,10 +28,13 @@ Route::post('login', [AuthController::class, 'attemptLogin'])->name('signin');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 Route::get('reset-password', [AuthController::class, 'resetPassword'])->name('reset-password');
 Route::get('forgot-password', [AuthController::class, 'forgotPassword'])->name('forgot-password');
+Route::get('update-password', [AuthController::class, 'updatePassword'])->name('update-password');
+Route::post('send-mail', [AuthController::class, 'sendMail'])->name('send-mail');
 
 Route::get('contacto', fn() => view('contacto'))->name('contacto');
+Route::get('mail', fn() => view('emails.reset-password-mail'))->name('mail');
 
 
 // Controllers
-Route::resource('usuarios', UsuarioController::class);
+Route::resource('usuarios', UsuarioController::class)->except(['store'])->middleware('auth');
 Route::resource('muebles', MuebleController::class);

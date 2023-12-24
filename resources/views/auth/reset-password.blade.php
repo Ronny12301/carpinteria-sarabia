@@ -6,6 +6,7 @@
   @include('layouts.header', ['title' => 'Nueva Contraseña'])
 
   <body class="font-principal space-x-0 space-y-12">
+    @include('layouts.popups.success')
 
     <div class="flex">
 
@@ -17,13 +18,14 @@
 
         </div>
 
-        <form action="/XD" class="flex flex-col items-center justify-center m-6">
+        <form action="{{ route('update-password', $usuario) }}" method="POST" class="flex flex-col items-center justify-center m-6">
+          @csrf
 
           <label for="password">Nueva contraseña</label>
-          <input class="text-box-sarabia" type="password" name="password">
+          <input class="text-box-sarabia" type="password" name="password" placeholder="Contraseña">
 
           <label for="confirm-password">Confirmar contraseña</label>
-          <input class="text-box-sarabia" type="password" name="confirm-password">
+          <input class="text-box-sarabia" type="password" name="confirm-password" placeholder="Confirmar contraseña">
 
           <button class="btn-sarabia p-2" type="submit">Guardar contraseña</button>
         </form>

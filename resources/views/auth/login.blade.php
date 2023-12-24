@@ -4,6 +4,7 @@
 
 @section('content')
 <body class="font-principal">
+
 <div class="flex">
 
 <div class="sm:w-3/5 fixed h-screen bg-cover bg-no-repeat bg-left bg-fondo-login"> </div>
@@ -34,7 +35,11 @@
                     <small class="text-red-700 -mt-3 ml-4">{{ $message }}</small>
                 @enderror
 
-                <a href="{{ route('forgot-password') }}">¿Olvidó su contraseña?</a>
+                <a href="{{ route('forgot-password') }}"
+                    class="text-sm hover:underline"
+                >
+                    ¿Olvidó su contraseña?
+                </a>
 
                 <button class="btn-sarabia hover:bg-cafe-sarabia-hover" 
                 type="submit">

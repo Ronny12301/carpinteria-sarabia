@@ -16,9 +16,9 @@
       </div>
 
       @auth
-      <h1>Administración</h1>
-      <p>Bienvenido {{ auth()->user()->name }}</p>
-        <p class="pb-12">¿Qué desea hacer?</p>
+      <h1 class="text-lg">Administración</h1>
+      <p class="text-lg">Bienvenido {{ auth()->user()->name }}</p>
+      <p class="pb-12 text-lg">¿Qué desea hacer?</p>
       @endauth
 
       
