@@ -24,8 +24,8 @@ class AuthRequest extends FormRequest
         return [
             'name' => 'required|max:100|unique:users,name',
             'email'=> 'required|email|unique:users,email|max:255',
-            'password' => 'required',
-            'confirm-password' => 'required',
+            "password" => 'required|min:8|confirmed',
+            'password_confirmation' => 'required',
         ];
     }
 }

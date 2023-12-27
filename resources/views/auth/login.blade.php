@@ -4,6 +4,8 @@
 
 @section('content')
 <body class="font-principal">
+@include('layouts.popups.success')
+@include('layouts.popups.error')
 
 <div class="flex">
 

@@ -14,19 +14,24 @@
 
       <div class="w-screen sm:w-2/5 ml-auto">
         <div class="bg-cafe-sarabia text-white text-center flex flex-col">
-          <h1 class="pt-8 pb-10 text-3xl m-4">Ingrese su nueva contraseña</h1>
+          <h1 class="pt-8 text-3xl m-4">Ingrese su nueva contraseña</h1>
+          <h1 class="pb-10 text-2xl">{{ $usuario->name }}</h1>
 
         </div>
 
-        <form action="{{ route('update-password', $usuario) }}" method="POST" class="flex flex-col items-center justify-center m-6">
+        <form action="{{ route('update-password', $usuario->user_id) }}" method="POST" class="flex flex-col items-center justify-center m-6">
           @csrf
 
           <label for="password">Nueva contraseña</label>
-          <input class="text-box-sarabia" type="password" name="password" placeholder="Contraseña">
+          <input class="text-box-sarabia mb-3" type="password" id="password" name="password" placeholder="Contraseña">
+          @error('password')
+            <small class="text-red-700 -mt-3 ml-4">{{ $message }}</small>
+          @enderror
+          <br>
 
-          <label for="confirm-password">Confirmar contraseña</label>
-          <input class="text-box-sarabia" type="password" name="confirm-password" placeholder="Confirmar contraseña">
-
+          <label for="password_confirmation">Confirmar contraseña</label>
+          <input class="text-box-sarabia mb-3" type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirmar contraseña">
+ 
           <button class="btn-sarabia p-2" type="submit">Guardar contraseña</button>
         </form>
       </div>

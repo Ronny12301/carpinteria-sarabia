@@ -26,9 +26,9 @@ Route::post('register', [AuthController::class, 'create'])->name('register');
 Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('login', [AuthController::class, 'attemptLogin'])->name('signin');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
-Route::get('reset-password', [AuthController::class, 'resetPassword'])->name('reset-password');
-Route::get('forgot-password', [AuthController::class, 'forgotPassword'])->name('forgot-password');
-Route::get('update-password', [AuthController::class, 'updatePassword'])->name('update-password');
+Route::get('reset-password/{usuario}/{timestamp}', [AuthController::class, 'resetPassword'])->name('reset-password')->middleware('guest');
+Route::get('forgot-password', [AuthController::class, 'forgotPassword'])->name('forgot-password')->middleware('guest');
+Route::post('update-password/{usuario}', [AuthController::class, 'updatePassword'])->name('update-password');
 Route::post('send-mail', [AuthController::class, 'sendMail'])->name('send-mail');
 
 Route::get('contacto', fn() => view('contacto'))->name('contacto');

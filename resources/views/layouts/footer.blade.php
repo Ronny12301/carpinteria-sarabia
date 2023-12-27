@@ -1,6 +1,6 @@
 {{-- Pie de pagina --}}
-<div class="mt-7"></div>
-<footer class="bg-cafe-sarabia text-center text-md text-white fixed pt-9 right-0 left-0 bottom-0">
+<div class="sm:mt-7"></div>
+<footer class="hidden sm:inline bg-cafe-sarabia text-center text-md text-white fixed pt-9 right-0 left-0 bottom-0">
         <a href="javascript:history.back()" 
             class="fill-white hover:fill-gray-300 absolute left-4 bottom-0"
         >

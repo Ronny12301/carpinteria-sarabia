@@ -52,10 +52,15 @@ class UsuarioController extends Controller
         if (auth()->user()->user_id === $usuario->user_id ) {
             $request->validate([
                 "email" => ['required', 'max:255', \Illuminate\Validation\Rule::unique('users')->ignore($usuario->user_id, 'user_id'),],
+                "password" => "nullable|min:8|confirmed",
             ]);
+
+            if ($request->filled("password")) {
+                $usuario->password = bcrypt($request->password);
+            }
         }
         
-        $usuario->update($request->all());
+        $usuario->update($request->except('password'));
         return redirect()->route("usuarios.index")->with("success", "Usuario actualizado.");
     }
 
@@ -64,6 +69,9 @@ class UsuarioController extends Controller
      */
     public function destroy(User $usuario)
     {
+        if ($usuario->user_id === auth()->user()->user_id) {
+            return redirect()->route("usuarios.index")->with("error", "No puedes eliminar tu propio usuario.");
+        }
         $usuario->delete();
 
         return redirect()->route("usuarios.index")->with("success", "Usuario eliminado.");

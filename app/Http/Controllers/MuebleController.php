@@ -96,6 +96,6 @@ class MuebleController extends Controller
         }
         $mueble->delete();
 
-        return redirect()->route('muebles.index');
+        return redirect()->route('muebles.index')->with('success','Mueble eliminado correctamente');
     }
 }

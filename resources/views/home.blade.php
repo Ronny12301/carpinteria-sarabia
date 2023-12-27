@@ -4,7 +4,7 @@
 
 @section('content')
 
-  <body class="bg-fondo-principal bg-cover bg-no-repeat bg-fixed font-principal text-white">
+  <body class="bg-fondo-principal bg-cover bg-no-repeat bg-fixed font-principal text-white backdrop-filter backdrop-brightness-[0.65]">
     @include('layouts.header', ['title' => ''])
 
     <div class="flex flex-col items-center justify-center h-screen">

@@ -5,9 +5,8 @@
 @section('content')
   @include('layouts.header', ['title' => 'Recuperar Contraseña'])
 
-  {{-- para ver la de restaurar la contraseña vete a /reset-password --}}
-
   <body class="font-principal space-x-0 space-y-12">
+    @include('layouts.popups.success')
 
     <div class="flex">
 
@@ -19,7 +18,7 @@
 
         </div>
 
-          <form action="{{ route('send-mail') }}" method="post">
+          <form action="{{ route('send-mail') }}" method="POST">
             @csrf
 
             <div class="flex flex-col ml-6 mr-6 -mb-8 mt-6">

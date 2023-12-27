@@ -43,10 +43,10 @@
                     <small class="text-red-700 -mt-3 ml-4">{{ $message }}</small>
                 @enderror
         
-                <label class="ml-4" for="confirm-password">Confrimar contraseña</label>
+                <label class="ml-4" for="password_confirmation">Confirmar contraseña</label>
                 <input class="text-box-sarabia mb-3"
-                    type="password" name="confirm-password" 
-                    id="confirm-password" placeholder="Confirmar contraseña"
+                    type="password" name="password_confirmation" 
+                    id="password_confirmation" placeholder="Confirmar contraseña"
                 >
         
                 <button type="submit" class="btn-sarabia hover:bg-cafe-sarabia-hover">

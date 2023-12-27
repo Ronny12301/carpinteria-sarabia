@@ -34,7 +34,7 @@
             @enderror
 
             <label for="tipo" class="ml-4">Tipo</label>
-            <input class="text-box-sarabia mb-3" type="text" name="tipo" id="tipo" value="{{ old('tipo') }}">
+            <input class="text-box-sarabia mb-3" type="text" name="tipo" id="tipo" placeholder="Asientos" value="{{ old('tipo') }}">
             @error('tipo')
               <small class="text-red-700 -mt-3 ml-4">{{ $message }}</small>
             @enderror

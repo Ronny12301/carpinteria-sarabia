@@ -32,6 +32,25 @@
                         id="email" placeholder="correo@example.com"
                         value="{{ old('email') ?? $usuario->email }}"
                     >
+                    @error('email')
+                        <small class="text-red-700 -mt-3 ml-4">{{ $message }}</small>
+                    @enderror
+
+                    <label class="ml-4" for="name">Contraseña</label>
+                    <input class="text-box-sarabia mb-3"
+                        type="password" name="password" 
+                        id="password" placeholder="Contraseña" 
+                        value="{{ old('password') }}"
+                    >   
+                    @error('password')
+                        <small class="text-red-700 -mt-3 ml-4">{{ $message }}</small>
+                    @enderror
+                    
+                    <label class="ml-4" for="password_confirmation">Confirmar contraseña</label>
+                    <input class="text-box-sarabia mb-3"
+                        type="password" name="password_confirmation" 
+                        id="password_confirmation" placeholder="Confirmar contraseña"
+                    >
                 @endif
         
                 <button type="submit" class="btn-sarabia hover:bg-cafe-sarabia-hover">
