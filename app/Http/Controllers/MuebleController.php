@@ -84,7 +84,14 @@ class MuebleController extends Controller
     {
         $request->validated();
 
-        $mueble->update($request->all());
+        if ($request->hasFile('imagen')) {
+            $img = $request->file('imagen')->store('public/muebles');
+            $img = str_replace('public/', '', $img);
+            $mueble->imagen = "storage/$img";
+            $mueble->save();
+        }
+
+        $mueble->update($request->except('imagen'));
 
         return redirect()->route('muebles.index');
     }
