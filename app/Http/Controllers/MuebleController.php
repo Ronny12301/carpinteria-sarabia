@@ -13,7 +13,7 @@ class MuebleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() 
+    public function index()
     {
         $muebles = Mueble::all();
 
@@ -21,31 +21,31 @@ class MuebleController extends Controller
     }
 
     /**
-     * Muestra el formulario para crear un nuevo mueble.
+     * Muestra el formulario para crear*.
      *
      * @return \Illuminate\View\View
      */
-    public function create() 
+    public function create()
     {
         return view('muebles.create');
     }
 
     /**
-     * Muestra el formulario para editar un mueble.
+     * Muestra el formulario para editar
      *
      * @return \Illuminate\View\View
      */
-    public function edit(Mueble $mueble) 
+    public function edit(Mueble $mueble)
     {
-        return view('muebles.edit')->with('mueble',$mueble);
+        return view('muebles.edit')->with('mueble', $mueble);
     }
 
     /**
-     * Muestra la vista para visualizar un mueble en específico.
+     * Muestra la vista para visualizar un mueble.
      *
      * @return \Illuminate\Contracts\View\View
      */
-    public function show() 
+    public function show()
     {
         // return view('muebles.show');
     }
@@ -56,7 +56,7 @@ class MuebleController extends Controller
      * @param  MuebleRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(MuebleRequest $request) 
+    public function store(MuebleRequest $request)
     {
         $request->validated();
 
@@ -67,7 +67,7 @@ class MuebleController extends Controller
             $img = str_replace('public/', '', $img);
             $mueble['imagen'] = "storage/$img";
         }
-     
+
         Mueble::create($mueble);
 
         return redirect()->route('muebles.index');
@@ -80,29 +80,22 @@ class MuebleController extends Controller
      * @param  \App\Models\Mueble  $mueble
      * @return \Illuminate\Http\Response
      */
-    public function update(MuebleRequest $request, Mueble $mueble) 
+    public function update(MuebleRequest $request, Mueble $mueble)
     {
         $request->validated();
 
-        if ($request->hasFile('imagen')) {
-            $img = $request->file('imagen')->store('public/muebles');
-            $img = str_replace('public/', '', $img);
-            $mueble->imagen = "storage/$img";
-            $mueble->save();
-        }
-
-        $mueble->update($request->except('imagen'));
+        $mueble->update($request->all());
 
         return redirect()->route('muebles.index');
     }
 
-    public function destroy(Mueble $mueble) 
+    public function destroy(Mueble $mueble)
     {
         if ($mueble->imagen) {
             unlink(public_path($mueble->imagen));
         }
         $mueble->delete();
 
-        return redirect()->route('muebles.index')->with('success','Mueble eliminado correctamente');
+        return redirect()->route('muebles.index')->with('success', 'Mueble eliminado correctamente');
     }
 }

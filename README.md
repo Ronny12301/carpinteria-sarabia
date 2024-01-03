@@ -1,128 +1,66 @@
-# Carpintería Sarabia
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-Proyecto final para la EE Desarrollo de sistemas web.
-Este sistema consta de un inventario de muebles para la carpintería Sarabia. Su función principal es exhibir el catálogo de muebles disponibles en la carpintería, con el objetivo de promover de manera más efectiva los productos que se pretenden comercializar. Además, facilita la obtención de información de contacto con el propietario de la empresa. Para los empleados, se proporciona un inicio de sesión que les permite realizar modificaciones en los muebles presentados y gestionar las cuentas registradas en el sistema.
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-## Equipo
-- <a href="https://github.com/LeoMe34">Leonardo Alejandro Mendez Miranda</a> 
-- <a href="https://github.com/Ronny12301">Ronny Pérez Juárez </a>
-- <a href="https://github.com/JarikAnota">Jarik Ernesto Reyes Anota</a>
+## About Laravel
 
-## Documentación
-- <a href="https://docs.google.com/document/d/1S_1tJ4ldyJcTt_EZMbKfYPTDRYoHf7-WRIwUyohMjJY/edit?usp=sharing">Link de Google Drive</a>
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-## Capturas
-![menu principal](https://github.com/Ronny12301/carpinteria-sarabia/assets/100802754/c42a91b1-9d92-4cab-9ef7-288844e75104)
-![image](https://github.com/Ronny12301/carpinteria-sarabia/assets/100802754/5602257a-4c20-45aa-b9b5-5da61538368b)
-![datos de contacto](https://github.com/Ronny12301/carpinteria-sarabia/assets/100802754/f78d0391-69cc-4e3b-b0e5-c5ef9e69e855)
-![inicio de sesión](https://github.com/Ronny12301/carpinteria-sarabia/assets/100802754/317f11fc-b2ba-40f3-96dd-3737dc5fa948)
-![lista de empleados](https://github.com/Ronny12301/carpinteria-sarabia/assets/100802754/46f2740b-094f-41ee-ba7c-05bd60e1a546)
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-## Desplegar en un servidor 
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-Para desplegar un servidor en Apache2 en una maquina Linux se deben ejecutar los siguientes comandos
+## Learning Laravel
 
-```
-sudo apt update
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-sudo apt install nodejs -y
+You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-# instalar git wget y unzip para descargar PhpMyAdmin de su pagina oficial
-sudo apt install git wget unzip -y
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-# instalar servidor apache
-sudo apt install apache2 -y
-sudo ufw allow 'Apache Full'
-sudo ufw enable
+## Laravel Sponsors
 
-# instalar mysql server
-sudo apt install mysql-server -y
-sudo bash -c "echo -e 'n\ny\ny\ny\ny\n' | mysql_secure_installation"
-sudo mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY ''; FLUSH PRIVILEGES;"
-sudo mysql -u root -e "CREATE DATABASE carpinteria_sarabia;"
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-# instalar PHP y librerias para conectarse a MySQL, apache pueda manejar los archivos, comprimir zips, usar artisan y correr los seeders
-sudo apt install php libapache2-mod-php php-mysql php-zip php-xml php-mbstring php-gd php-curl -y
+### Premium Partners
 
-# composer
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php -r "if (hash_file('sha384', 'composer-setup.php') === 'e21205b207c3ff031906575712edab6f13eb0b361f2085f1f1237b7126d785e826a450292b6cfd1d64d92e6563bbde02') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-php composer-setup.php
-php -r "unlink('composer-setup.php');"
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[OP.GG](https://op.gg)**
+- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+- **[Lendio](https://lendio.com)**
 
+## Contributing
 
-# PhpMyAdmin
-wget https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-all-languages.zip
-unzip phpMyAdmin-5.2.1-all-languages.zip
-sudo mv phpMyAdmin-5.2.1-all-languages /var/www/phpmyadmin
-rm phpMyAdmin-5.2.1-all-languages.zip
-# cambiar dueño de carpeta
-sudo chown -R $USER:$USER /var/www/phpmyadmin
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
+## Code of Conduct
 
-# agregar a localhost/phpmyadmin
-PHPMYADMIN='
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-# phpmyadmin
-Alias /phpmyadmin /var/www/phpmyadmin
-<Directory "/var/www/phpmyadmin">
-   Options None
-   AllowOverride None
-   Require local
-</Directory>
-'
-echo "$PHPMYADMIN" | sudo tee -a /etc/apache2/apache2.conf
+## Security Vulnerabilities
 
-sudo cp /var/www/phpmyadmin/config.sample.inc.php /var/www/phpmyadmin/config.inc.php
-sudo sed -i "s/\$cfg\['Servers'\]\[\$i\]\['AllowNoPassword'\] = false;/\$cfg\['Servers'\]\[\$i\]\['AllowNoPassword'\] = true;/" "/var/www/phpmyadmin/config.inc.php"
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-# permisos
-sudo chown -R $USER:$USER /var/www/
-sudo usermod -a -G $USER www-data
-sudo chmod -R 775 /var/www/
+## License
 
-
-# firewall al puerto 3336, para bloquear conexiones externas a la BD
-sudo iptables -A INPUT -p tcp --dport 3306 -j DROP
-sudo debconf-set-selections <<< "iptables-persistent iptables-persistent/autosave_v4 boolean true"
-sudo debconf-set-selections <<< "iptables-persistent iptables-persistent/autosave_v6 boolean true"
-
-sudo apt install iptables-persistent -y
-sudo netfilter-persistent save
-
-
-```
-
-Despues de configurar el servidor, se debe clonar el repositorio
-
-```
-git clone https://github.com/Ronny12301/carpinteria-sarabia.git /var/www/carpinteria-sarabia.ddns.net
-```
-
-Habilitar el sitio en el servidor apache
-```
-CARPINTERIA='<VirtualHost *:80>
-   ServerName carpinteria-sarabia.ddns.net
-   ServerAdmin webmaster@localhost
-   DocumentRoot /var/www/carpinteria-sarabia.ddns.net/public
-   
-   <Directory /var/www/carpinteria-sarabia.ddns.net/public>
-       AllowOverride All
-       Require all granted
-   </Directory>
-   
-   ErrorLog ${APACHE_LOG_DIR}/error.log
-   CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>'
-
-# Crea el archivo de configuración con el texto
-echo "$CARPINTERIA" | sudo tee /etc/apache2/sites-available/carpinteria-sarabia.ddns.net.conf
-
-# habilitar el sitio
-sudo a2ensite carpinteria-sarabia.ddns.net
-
-# generar tablas de la BD
-php /var/www/carpinteria-sarabia.ddns.net/artisan migrate:fresh
-
-
-```
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
