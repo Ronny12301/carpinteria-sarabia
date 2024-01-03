@@ -29,7 +29,7 @@
     <input x-model="search" type="search" placeholder="Buscar muebles" class="px-3 py-2 absolute right-10 top-[83px] border rounded-lg">
     <br> <br>
 
-    <div class="px-12 sm:px-32 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mb-0 max-w-screen-lg">
+    <div class="px-12 sm:px-32 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mb-0 max-w-screen-xl lg:mx-auto">
       @foreach ($muebles as $mueble)
         <article x-show="searchMueble($el)" class="bg-slate-50 border-2 border-slate-300 shadow-gray-300 shadow-lg rounded-md ">
           <div class="bg-cafe-sarabia py-4 text-white text-xl rounded-t-md text-center border-b-2 border-slate-300">

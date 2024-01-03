@@ -40,6 +40,7 @@ export default {
         'sm': '820px',
         'md': '1050px',
         'lg': '2000px',
+        'xl': '2300px',
         // => @media (min-width: 1440px) { ... }
       },
     },
