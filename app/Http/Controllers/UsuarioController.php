@@ -17,7 +17,7 @@ class UsuarioController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Muestra el formulario para crear.
      */
     public function create()
     {
@@ -25,7 +25,7 @@ class UsuarioController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Despliega lo pedido.
      */
     public function show(string $id)
     {
@@ -33,7 +33,7 @@ class UsuarioController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Formulario para editar un usuario
      */
     public function edit(User $usuario)
     {
@@ -41,7 +41,7 @@ class UsuarioController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * actualiza los recursos especificos.
      */
     public function update(Request $request, User $usuario)
     {
@@ -49,7 +49,7 @@ class UsuarioController extends Controller
             "name" => ['required', 'max:100', \Illuminate\Validation\Rule::unique('users')->ignore($usuario->user_id, 'user_id'),],
         ]);
 
-        if (auth()->user()->user_id === $usuario->user_id ) {
+        if (auth()->user()->user_id === $usuario->user_id) {
             $request->validate([
                 "email" => ['required', 'max:255', \Illuminate\Validation\Rule::unique('users')->ignore($usuario->user_id, 'user_id'),],
                 "password" => "nullable|min:8|confirmed",
@@ -59,13 +59,13 @@ class UsuarioController extends Controller
                 $usuario->password = bcrypt($request->password);
             }
         }
-        
+
         $usuario->update($request->except('password'));
         return redirect()->route("usuarios.index")->with("success", "Usuario actualizado.");
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remueve los elementos solicitados.
      */
     public function destroy(User $usuario)
     {
