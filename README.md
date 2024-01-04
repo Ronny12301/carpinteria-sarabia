@@ -12,6 +12,10 @@ Este sistema consta de un inventario de muebles para la carpintería Sarabia. Su
 - <a href="https://docs.google.com/document/d/1S_1tJ4ldyJcTt_EZMbKfYPTDRYoHf7-WRIwUyohMjJY/edit?usp=sharing">Documentación</a>
 - <a href="https://docs.google.com/document/d/1gQE64macSAvNFxgwgUGa_J3GsiqWsPcPMhnCZVla6Y4/edit?usp=sharing">Propuesta</a>
 
+## Mapa de Sitio
+![image](https://github.com/Ronny12301/carpinteria-sarabia/assets/100802754/021b4d97-e876-4648-a327-3f60f3d88ea2)
+
+
 ## Capturas
 ![menu principal](https://github.com/Ronny12301/carpinteria-sarabia/assets/100802754/c42a91b1-9d92-4cab-9ef7-288844e75104)
 ![image](https://github.com/Ronny12301/carpinteria-sarabia/assets/100802754/5602257a-4c20-45aa-b9b5-5da61538368b)
