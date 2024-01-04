@@ -8,8 +8,9 @@ Este sistema consta de un inventario de muebles para la carpintería Sarabia. Su
 - <a href="https://github.com/Ronny12301">Ronny Pérez Juárez </a>
 - <a href="https://github.com/JarikAnota">Jarik Ernesto Reyes Anota</a>
 
-## Documentación
-- <a href="https://docs.google.com/document/d/1S_1tJ4ldyJcTt_EZMbKfYPTDRYoHf7-WRIwUyohMjJY/edit?usp=sharing">Link de Google Drive</a>
+## Documentos
+- <a href="https://docs.google.com/document/d/1S_1tJ4ldyJcTt_EZMbKfYPTDRYoHf7-WRIwUyohMjJY/edit?usp=sharing">Documentación</a>
+- <a href="https://docs.google.com/document/d/1gQE64macSAvNFxgwgUGa_J3GsiqWsPcPMhnCZVla6Y4/edit?usp=sharing">Propuesta</a>
 
 ## Capturas
 ![menu principal](https://github.com/Ronny12301/carpinteria-sarabia/assets/100802754/c42a91b1-9d92-4cab-9ef7-288844e75104)
@@ -18,7 +19,22 @@ Este sistema consta de un inventario de muebles para la carpintería Sarabia. Su
 ![inicio de sesión](https://github.com/Ronny12301/carpinteria-sarabia/assets/100802754/317f11fc-b2ba-40f3-96dd-3737dc5fa948)
 ![lista de empleados](https://github.com/Ronny12301/carpinteria-sarabia/assets/100802754/46f2740b-094f-41ee-ba7c-05bd60e1a546)
 
-## Desplegar en un servidor 
+## Dependencias a instalar
+
+- [PHP](https://www.php.net/downloads.php)
+- [Composer](https://getcomposer.org/download/)
+- [NodeJS](https://nodejs.org/en)
+- [MySQL](https://www.mysql.com/downloads/)
+
+### Ejecutar el sistema en local
+
+```
+composer update
+npm run build
+php artisan serve
+```
+
+## Desplegar en un servidor Linux
 
 Para desplegar un servidor en Apache2 en una maquina Linux se deben ejecutar los siguientes comandos
 
